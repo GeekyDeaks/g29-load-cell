@@ -2,6 +2,10 @@
 
 WIP on replacing the stock brake pedal sensor on a Logitech G29 pedal set with a load cell
 
+It uses two cheap load cells arranged in a [wheatstone bridge](https://en.wikipedia.org/wiki/Wheatstone_bridge)
+and a small circuit using a Instrumentation Op-Amp in reverse gain mode.  The cells are mounted in a 3D printed
+model that replaces the lower half of the brake piston assembly
+
 # Software used
 
 1. EAGLE https://www.autodesk.co.uk/products/eagle/free-download
