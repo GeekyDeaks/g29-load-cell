@@ -11,7 +11,7 @@ WIP on replacing the stock brake pedal sensor on a Logitech G29 pedal set with a
 
 From reading around it seems that there is not an agreed set of values for what represents
 min and max braking.  Below is a table I took from attaching an AVO directly to the middle pin 
-of the brake potentiometer on my set:
+of the brake potentiometer on my set and monitoring the output on the PS4:
 
 | Level | Voltage |
 |------:|---------|
@@ -44,6 +44,17 @@ The above values were taken by removing the wiring loom from the pedal set
 and measuring at the spade connectors.
 Note that these pin outs are different to those reported by others for the G27
 with +3.3v and Gnd switched
+
+# Load Cells
+
+The load cells are cheap bathroom scale variety.  I got mine from amazon:
+
+https://www.amazon.co.uk/gp/product/B07TWLP3X8
+
+![load cell dimensions](loadcell.png)
+
+Each cell is comprised of two resistors one which increases under load and the 
+other which decreases.  Zero load is approx 1k, with about 2-3 Ohm change under heavy load
 
 # INA122P
 
