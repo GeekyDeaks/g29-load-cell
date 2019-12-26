@@ -65,5 +65,5 @@ we can simply reduce `ref` lower as required and not worry too much about it's p
 # STL models
 
 There are two separate bodies.  [stl/holder.stl](stl/holder.stl) contains the model for the load cell holder
-that mounts into the pedal frame and [stl/spacer.stl](stl/holder.stl) contains the model for the small 
+that mounts into the pedal frame and [stl/spacer.stl](stl/spacer.stl) contains the model for the small 
 spacer that sits between the two cells
