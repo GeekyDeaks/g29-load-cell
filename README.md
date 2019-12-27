@@ -85,3 +85,12 @@ simply reduce `ref` lower as required and not worry too much about it's precise 
 There are two separate bodies.  [stl/holder.stl](stl/holder.stl) contains the model for the load cell holder
 that mounts into the pedal frame and [stl/spacer.stl](stl/spacer.stl) contains the model for the small 
 spacer that sits between the two cells
+
+# Inspiration
+
+This is a popular mod and others have come before with interesting designs that you may also
+want to take a look at:
+
+https://www.reddit.com/r/simracing/comments/92exmk/diy_load_cell_brake_for_g29_with_native_ps4/
+https://www.racedepartment.com/threads/low-budget-load-cell-mod-for-logitech-g25-g27-g29.167760/
+https://imgur.com/gallery/gOjAf#SXX5zrY
