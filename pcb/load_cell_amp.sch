@@ -8382,7 +8382,7 @@ Single Supply, MicroPower</description>
 <part name="GND1" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="GND2" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
-<part name="IC2" library="g29_load_cell" deviceset="INA122" device="P" package3d_urn="urn:adsk.eagle:package:4906/1"/>
+<part name="IC1" library="g29_load_cell" deviceset="INA122" device="P" package3d_urn="urn:adsk.eagle:package:4906/1"/>
 </parts>
 <sheets>
 <sheet>
@@ -8421,7 +8421,7 @@ Single Supply, MicroPower</description>
 <instance part="SUPPLY2" gate="G$1" x="50.8" y="30.48" smashed="yes">
 <attribute name="VALUE" x="50.8" y="33.274" size="1.778" layer="96" align="bottom-center"/>
 </instance>
-<instance part="IC2" gate="G$1" x="20.32" y="2.54" smashed="yes">
+<instance part="IC1" gate="G$1" x="20.32" y="2.54" smashed="yes">
 <attribute name="NAME" x="10.16" y="20.955" size="1.778" layer="95" ratio="10"/>
 <attribute name="VALUE" x="10.16" y="-17.78" size="1.778" layer="96" ratio="10"/>
 </instance>
@@ -8433,7 +8433,7 @@ Single Supply, MicroPower</description>
 <segment>
 <pinref part="R_GAIN" gate="1" pin="A"/>
 <wire x1="7.62" y1="2.54" x2="0" y2="2.54" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="RG@1"/>
+<pinref part="IC1" gate="G$1" pin="RG@1"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -8441,7 +8441,7 @@ Single Supply, MicroPower</description>
 <pinref part="R_GAIN" gate="1" pin="S"/>
 <wire x1="7.62" y1="12.7" x2="7.62" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="7.62" y1="7.62" x2="5.08" y2="7.62" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="RG"/>
+<pinref part="IC1" gate="G$1" pin="RG"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -8468,7 +8468,7 @@ Single Supply, MicroPower</description>
 <wire x1="63.5" y1="12.7" x2="63.5" y2="-20.32" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="-20.32" x2="50.8" y2="-20.32" width="0.1524" layer="91"/>
 <junction x="50.8" y="-20.32"/>
-<pinref part="IC2" gate="G$1" pin="GND"/>
+<pinref part="IC1" gate="G$1" pin="GND"/>
 </segment>
 </net>
 <net name="3.3V" class="0">
@@ -8494,21 +8494,21 @@ Single Supply, MicroPower</description>
 <wire x1="40.64" y1="5.08" x2="50.8" y2="5.08" width="0.1524" layer="91"/>
 <junction x="40.64" y="-7.62"/>
 <junction x="50.8" y="5.08"/>
-<pinref part="IC2" gate="G$1" pin="3.3V"/>
+<pinref part="IC1" gate="G$1" pin="3.3V"/>
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
 <pinref part="R_REF" gate="1" pin="S"/>
 <wire x1="33.02" y1="-5.08" x2="45.72" y2="-5.08" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="REF"/>
+<pinref part="IC1" gate="G$1" pin="REF"/>
 </segment>
 </net>
 <net name="N$7" class="0">
 <segment>
 <pinref part="J2" gate="J1" pin="3"/>
 <wire x1="33.02" y1="15.24" x2="68.58" y2="15.24" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="OUT"/>
+<pinref part="IC1" gate="G$1" pin="OUT"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -8516,7 +8516,7 @@ Single Supply, MicroPower</description>
 <pinref part="J1" gate="J1" pin="2"/>
 <wire x1="-17.78" y1="15.24" x2="7.62" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="7.62" y1="15.24" x2="7.62" y2="17.78" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="+IN"/>
+<pinref part="IC1" gate="G$1" pin="+IN"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -8525,7 +8525,7 @@ Single Supply, MicroPower</description>
 <wire x1="-17.78" y1="17.78" x2="-10.16" y2="17.78" width="0.1524" layer="91"/>
 <wire x1="-10.16" y1="17.78" x2="-10.16" y2="-2.54" width="0.1524" layer="91"/>
 <wire x1="-10.16" y1="-2.54" x2="7.62" y2="-2.54" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="-IN"/>
+<pinref part="IC1" gate="G$1" pin="-IN"/>
 </segment>
 </net>
 </nets>
