@@ -11,6 +11,29 @@ model that replaces the lower half of the brake piston assembly
 1. EAGLE https://www.autodesk.co.uk/products/eagle/free-download
 2. Fusion 360 https://www.autodesk.com/campaigns/fusion-360-for-hobbyists
 
+# Load Cells
+
+The load cells are cheap bathroom scale variety.  I got mine from amazon:
+
+https://www.amazon.co.uk/gp/product/B07TWLP3X8
+
+![load cell dimensions](img/loadcell.png)
+
+Each cell is comprised of two resistors one which increases under load (white) and the 
+other which decreases (black).  Zero load is approx 1k, with about 2-3 Ohm change under heavy load
+
+# Wheatstone Bridge
+
+There are at least two ways to construct the bridge, but in order to keep
+the whole assembly fairly intuitive, I suggest connecting the cells based on their location in the assembly
+
+For the cells above there are three wires
+
+1. white - increasing resistance under load
+2. red - common
+3. black - decreasing resistance under load
+
+
 # Amplifier Schematic
 
 ![amp schematic](img/amp_schematic.png)
@@ -33,17 +56,6 @@ this causes the common mode rejection to degrade as we have a high
 impedence on `ref`.  As per the datasheet, we should really put a unity gain op-amp
 in place to act as a buffer, but since we do not require high precision, we can 
 simply reduce `ref` lower as required and not worry too much about it's precise value
-
-# Load Cells
-
-The load cells are cheap bathroom scale variety.  I got mine from amazon:
-
-https://www.amazon.co.uk/gp/product/B07TWLP3X8
-
-![load cell dimensions](img/loadcell.png)
-
-Each cell is comprised of two resistors one which increases under load and the 
-other which decreases.  Zero load is approx 1k, with about 2-3 Ohm change under heavy load
 
 # STL models
 
