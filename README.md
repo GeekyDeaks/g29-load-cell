@@ -106,7 +106,7 @@ with +3.3v and Gnd switched
 This is a popular mod and others have come before with interesting designs that you may also
 want to take a look at:
 
-https://www.reddit.com/r/simracing/comments/92exmk/diy_load_cell_brake_for_g29_with_native_ps4/
-https://www.racedepartment.com/threads/low-budget-load-cell-mod-for-logitech-g25-g27-g29.167760/
-https://imgur.com/gallery/gOjAf#SXX5zrY
-https://www.racedepartment.com/threads/logitech-g25-g27-g29-g920-load-cell-diy-project.174623/
+- https://www.reddit.com/r/simracing/comments/92exmk/diy_load_cell_brake_for_g29_with_native_ps4/
+- https://www.racedepartment.com/threads/low-budget-load-cell-mod-for-logitech-g25-g27-g29.167760/
+- https://imgur.com/gallery/gOjAf#SXX5zrY
+- https://www.racedepartment.com/threads/logitech-g25-g27-g29-g920-load-cell-diy-project.174623/
