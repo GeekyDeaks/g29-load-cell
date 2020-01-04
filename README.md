@@ -87,9 +87,18 @@ The G29 has been known to glitch if the clutch is disconnected and the leads lef
 
 # STL models
 
-There are two separate bodies.  [stl/holder.stl](stl/holder.stl) contains the model for the load cell holder
-that mounts into the pedal frame and [stl/spacer.stl](stl/spacer.stl) contains the model for the small 
-spacer that sits between the two cells
+## Single Load Cell
+
+The single load cell holder should fit in the standard pedal case
+[stl/single_holder.stl](stl/single_holder.stl) 
+
+## Dual Load Cell
+
+There are two separate bodies for the dual confifguration.  [stl/dual_holder.stl](stl/dual_holder.stl) contains
+the model for the load cell holder that mounts into the pedal frame and [stl/dual_spacer.stl](stl/dual_spacer.stl
+contains the model for the small spacer that sits between the two cells.
+
+NOTE: this model will not fit inside the stadard pedal case
 
 # G29 brake levels
 
