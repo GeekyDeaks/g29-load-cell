@@ -6,6 +6,23 @@ It uses one or two cheap load cells arranged in a [wheatstone bridge](https://en
 and a small circuit using a Instrumentation Op-Amp.  The cells are mounted in a 3D printed
 model that replaces the lower half of the brake piston assembly
 
+
+# Shopping list
+
+1. 3D printer capable of 80mm x 43mm x 43mm
+2. Bathroom scale type loadcells
+3. PCB copper board or stripboard (35mm x 30mm)
+4. INA122P instrumentation amplifier
+5. 2k trim pot (dual cell)
+6. 1k trim pot
+7. 10ohm trim pot (single cell)
+8. 2x 1k resistor (single cell)
+9. 100ohm resistor (fake clutch)
+10. 900ohm resistor (fake clutch)
+11. M10 thread ~30mm
+12. 2x Half height M10 nuts
+13. M10 to 24mm washer
+
 # Software used
 
 1. EAGLE https://www.autodesk.co.uk/products/eagle/free-download
@@ -36,17 +53,17 @@ For the cells above there are three wires
 ## Single Load Cell
 
 In a single load cell configuration, the load cell is used as the top portion of the wheatstone
-bridge.  R1, R2 and R_BAL need to be populated in order to construct the lower half of the bridge 
-and R_REF should be replaced with a link to GND to run the amp in positive gain mode
+bridge.  `R1`, `R2` and `R_BAL1` need to be populated in order to construct the lower half of the bridge 
+and `R_REF` should be replaced with a link to GND to run the amp in positive gain mode
 
-The 1k resistors for R1 and R2 should be measured and the larger of the two should
-be used for R1 to allow R_BAL to adjust the link with R2 and force the bridge out of 
+The 1k resistors for `R1` and `R2` should be measured and the larger of the two should
+be used for `R1` to allow `R_BAL1` to adjust the link with `R2` and force the bridge out of 
 blance with no load
 
 ## Dual Load Cell
 
-If two load cells are used then R1, R2 and R_BAL should be left empty and R_REF
-should be populated with a 2K pot.  R_REF will allow the INA122P to be run in
+If two load cells are used then `R1`, `R2` and `R_BAL1` should be left empty and `R_REF`
+should be populated with a 2k pot.  `R_REF` will allow the INA122P to be run in
 reverse gain mode by ensuring that the higher side of the bridge is connected to
 v- on the LOAD_CELL connector (J1)
 
@@ -62,7 +79,7 @@ we have two choices:
 
 Unblancing the bridge is the intended approach for a single load cell configuration
 and involves tweaking one side of the bridge by a very small
-resistance via R_BAL.
+resistance via `R_BAL1`.
 
 Inverting the gain is intended for the dual load cell configuation.  Fortunately, the INA122 is
 rail to rail, so you can have `Vout` go all the way to `V+` by tying `ref` to `V+`
@@ -78,7 +95,9 @@ simply reduce `ref` lower as required and not worry too much about it's precise 
 ## Clutch
 
 The circuit also allows for simulating a clutch, allowing it to be removed if desired.
-The G29 has been known to glitch if the clutch is disconnected and the leads left hanging
+The G29 has been known to glitch if the clutch is disconnected and the leads left hanging.
+
+If you do not need this feature, you can leave `R3` and `R4` unpopulated on the board
 
 # PCB
 
