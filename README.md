@@ -6,6 +6,8 @@ It uses one or two cheap load cells arranged in a [wheatstone bridge](https://en
 and a small circuit using a Instrumentation Op-Amp.  The cells are mounted in a 3D printed
 model that replaces the lower half of the brake piston assembly
 
+There is a digital version by [SkiDude88](https://github.com/Skidude88/Skidude88-G29-PS4-LoadCell-Arduino/wiki) 
+using an HX711, that often comes bundled with the load cells, and an Arduino
 
 # Shopping list
 
@@ -117,7 +119,8 @@ There are two separate bodies for the dual confifguration.  [stl/dual_holder.stl
 the model for the load cell holder that mounts into the pedal frame and [stl/dual_spacer.stl](stl/dual_spacer.stl)
 contains the model for the small spacer that sits between the two cells.
 
-NOTE: this model will not fit inside the stadard pedal case
+NOTE: this model will not fit inside the stadard pedal case.  It is also tricky to get the case assembled
+without the cells falling out!
 
 # G29 brake levels
 
