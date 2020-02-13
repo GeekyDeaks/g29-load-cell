@@ -9,6 +9,12 @@ model that replaces the lower half of the brake piston assembly
 There is a digital version by [SkiDude88](https://github.com/Skidude88/Skidude88-G29-PS4-LoadCell-Arduino/wiki) 
 using an HX711, that often comes bundled with the load cells, and an Arduino
 
+Version 1 of the model looks like this installed with two load cells:
+
+![load cell holder](img/holder_v1.jpg)
+
+Version 3 is on the way!
+
 # Shopping list
 
 1. 3D printer capable of 80mm x 43mm x 43mm
