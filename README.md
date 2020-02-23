@@ -99,7 +99,8 @@ If you do not need this feature, you can leave `R3` and `R4` unpopulated on the 
 ![amp pcb bottom](img/amp_pcb_bottom.png)
 
 The PCB design is a little tricky to manually etch, so we came up with a slightly
-larger design to help
+larger design to help.  Note that this is a mirror image to print and apply to
+the copper via toner transfer.  You can find a pdf with the correct size [here](pcb/load_cell_amp_diy.pdf)
 
 ![diy pcb](img/amp_pcb_diy.png)
 
