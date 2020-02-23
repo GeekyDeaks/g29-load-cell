@@ -14,7 +14,7 @@ using an HX711, that often comes bundled with the load cells, and an Arduino
 
 Assembly re-uses the spring and rubber block, along with a short piece of M10 rod.
 The adjustment of the location of the washer and the protusion of the top nut
-allow changes the first stage of the pedal, which is designed to simulate
+allow changes to the first stage of the pedal, which is designed to simulate
 the initial feel of the pedal as the pads move into contact with the disc.
 
 ![holder parts](img/holder_v3_assembly_1.jpg)
