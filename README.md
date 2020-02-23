@@ -95,6 +95,11 @@ If you do not need this feature, you can leave `R3` and `R4` unpopulated on the 
 ![amp pcb top](img/amp_pcb_top.png)
 ![amp pcb bottom](img/amp_pcb_bottom.png)
 
+The PCB design is a little tricky to manually etch, so we came up with a slightly
+larger design to help
+
+![diy pcb](img/amp_pcb_diy.png)
+
 # STL model
 
 Previous prints have been done with the model on it's side.  This was to ensure the grain
