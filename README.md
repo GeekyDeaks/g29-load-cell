@@ -1,26 +1,29 @@
 # G29 Load Cell Mod
 
-Modification replacing the stock brake pedal sensor on a Logitech G29 pedal set with a load cell,
+Modification to replace the stock brake pedal sensor on a Logitech G29 pedal set with a load cell,
 the purpose of which is to more closely simulate a real brake system which is dependent on
-the force applied to the pdeal and not the pedal position
+the force applied to the pedal and not the pedal position
 
-It uses a cheap load cell with two closely matched 1k resistors arranged in a 
-[wheatstone bridge](https://en.wikipedia.org/wiki/Wheatstone_bridge)
-and a small circuit using a Instrumentation Op-Amp.  The cell is mounted in a 3D printed
+I assume this would work on the G920 without any issues, and possibly the G27 and G25,
+however I have not had the opportunity to test.
+
+It uses a cheap load cell with two closely matched 1k resistors arranged in a
+[Wheatstone bridge](https://en.wikipedia.org/wiki/Wheatstone_bridge)
+and an Instrumentation Op-Amp.  The cell is mounted in a 3D printed
 model that replaces the lower half of the brake piston assembly
 
 There is a digital version by [SkiDude88](https://github.com/Skidude88/Skidude88-G29-PS4-LoadCell-Arduino/wiki) 
 using an HX711, that often comes bundled with the load cells, and an Arduino
 
 Assembly re-uses the spring and rubber block, along with a short piece of M10 rod.
-The adjustment of the location of the washer and the protusion of the top nut
+The adjustment of the location of the washer and the protrusion of the top nut
 allow changes to the first stage of the pedal, which is designed to simulate
 the initial feel of the pedal as the pads move into contact with the disc.
 
 ![holder parts](img/holder_v3_assembly_1.jpg)
 ![holder assembled](img/holder_v3_assembly_2.jpg)
 
-Fully installed, with the amplifier cicuit mounted in a small case
+Fully installed, with the amplifier circuit mounted in a small case
 
 ![load cell holder](img/holder_v3.jpg)
 
@@ -47,7 +50,7 @@ Fully installed, with the amplifier cicuit mounted in a small case
 
 # Load Cells
 
-The load cells are cheap bathroom scale variety.  I got mine from amazon:
+The load cells are cheap bathroom scale variety.  I got mine from Amazon:
 
 https://www.amazon.co.uk/gp/product/B07TWLP3X8
 
@@ -67,11 +70,11 @@ The loadcell is connected to the circuit as follows:
 3. White -> V-
 
 Since we need to output a higher voltage with no load on the cells 
-we have to unblance the bridge so that load brings it back into balance.
+we have to unbalance the bridge so that load brings it back into balance.
 
 The 1k resistors for `R1` and `R2` should be measured and the larger of the two should
 be used for `R1` to allow `R_BAL1` to adjust the link with `R2` and force the bridge out of 
-blance with no load
+balance with no load
 
 `R_REF` should be replaced with a link from the middle pin to the right pin.  This
 will tie the `REF` pin on the INA122P to ground.
@@ -79,7 +82,7 @@ It was originally used when the design had two load cells
 and the INA122P was inverting the gain.
 
 Astute observers may have noticed the connections for the loadcell appear to be
-reversed in refence to V+ and V-.  This is because the labelling on the PCB of 
+reversed in reference to V+ and V-.  This is because the labelling on the PCB of 
 V+ and V- was in reference to the dual load cell configuration and hence the 
 labels on the PCB are not correct for a single cell.
 
@@ -103,7 +106,7 @@ larger design to help
 # STL model
 
 Previous prints have been done with the model on it's side.  This was to ensure the grain
-in the upper cyclinder was along the length of the cylinder
+in the upper cylinder was along the length of the cylinder
 
 [stl/single_holder.stl](stl/single_holder.stl) 
 
