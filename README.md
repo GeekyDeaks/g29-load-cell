@@ -1,19 +1,28 @@
 # G29 Load Cell Mod
 
-WIP on replacing the stock brake pedal sensor on a Logitech G29 pedal set with a load cell
+Modification replacing the stock brake pedal sensor on a Logitech G29 pedal set with a load cell,
+the purpose of which is to more closely simulate a real brake system which is dependent on
+the force applied to the pdeal and not the pedal position
 
-It uses one or two cheap load cells arranged in a [wheatstone bridge](https://en.wikipedia.org/wiki/Wheatstone_bridge)
-and a small circuit using a Instrumentation Op-Amp.  The cells are mounted in a 3D printed
+It uses a cheap load cell with two closely matched 1k resistors arranged in a 
+[wheatstone bridge](https://en.wikipedia.org/wiki/Wheatstone_bridge)
+and a small circuit using a Instrumentation Op-Amp.  The cell is mounted in a 3D printed
 model that replaces the lower half of the brake piston assembly
 
 There is a digital version by [SkiDude88](https://github.com/Skidude88/Skidude88-G29-PS4-LoadCell-Arduino/wiki) 
 using an HX711, that often comes bundled with the load cells, and an Arduino
 
-Version 1 of the model looks like this installed with two load cells:
+Assembly re-uses the spring and rubber block, along with a short piece of M10 rod.
+The adjustment of the location of the washer and the protusion of the top nut
+allow changes the first stage of the pedal, which is designed to simulate
+the initial feel of the pedal as the pads move into contact with the disc.
 
-![load cell holder](img/holder_v1.jpg)
+![holder parts](img/holder_v3_assembly_1.jpg)
+![holder assembled](img/holder_v3_assembly_2.jpg)
 
-Version 3 is on the way!
+Fully installed, with the amplifier cicuit mounted in a small case
+
+![load cell holder](img/holder_v3.jpg)
 
 # Shopping list
 
@@ -21,14 +30,14 @@ Version 3 is on the way!
 2. Bathroom scale type loadcells
 3. PCB copper board or stripboard (35mm x 30mm)
 4. INA122P instrumentation amplifier
-5. 2k trim pot (dual cell)
-6. 1k trim pot
-7. 10ohm trim pot (single cell)
-8. 2x 1k resistor (single cell)
-9. 100ohm resistor (fake clutch)
-10. 900ohm resistor (fake clutch)
-11. M10 thread ~30mm
-12. 2x Half height M10 nuts
+5. 1k trim pot
+6. 10ohm trim pot 
+7. 2x 1k resistor
+8. 100ohm resistor (fake clutch)
+9. 900ohm resistor (fake clutch)
+10. M10 thread ~30mm
+11. 3x Half height M10 nuts
+12. 1x M10 nut
 13. M10 to 24mm washer
 
 # Software used
@@ -47,58 +56,32 @@ https://www.amazon.co.uk/gp/product/B07TWLP3X8
 Each cell is comprised of two resistors one which increases under load (white) and the 
 other which decreases (black).  Zero load is approx 1k, with about 2-3 Ohm change under heavy load
 
-# Wheatstone Bridge
+# Amplifier Circuit
 
-The circuit allows for running the mod in either a dual or single load cell
-configuration. 
+![amp schematic](img/amp_schematic.png)
 
-For the cells above there are three wires
+The loadcell is connected to the circuit as follows:
 
-1. white - increasing resistance under load
-2. red - common
-3. black - decreasing resistance under load
+1. Red -> 3.3v
+2. Black -> V+
+3. White -> V-
 
-## Single Load Cell
-
-In a single load cell configuration, the load cell is used as the top portion of the wheatstone
-bridge.  `R1`, `R2` and `R_BAL1` need to be populated in order to construct the lower half of the bridge 
-and `R_REF` should be replaced with a link to GND to run the amp in positive gain mode
+Since we need to output a higher voltage with no load on the cells 
+we have to unblance the bridge so that load brings it back into balance.
 
 The 1k resistors for `R1` and `R2` should be measured and the larger of the two should
 be used for `R1` to allow `R_BAL1` to adjust the link with `R2` and force the bridge out of 
 blance with no load
 
-## Dual Load Cell
+`R_REF` should be replaced with a link from the middle pin to the right pin.  This
+will tie the `REF` pin on the INA122P to ground.  
+It was originally used when the design had two load cells
+and the INA122P was inverting the gain.
 
-If two load cells are used then `R1`, `R2` and `R_BAL1` should be left empty and `R_REF`
-should be populated with a 2k pot.  `R_REF` will allow the INA122P to be run in
-reverse gain mode by ensuring that the higher side of the bridge is connected to
-v- on the LOAD_CELL connector (J1)
-
-# Amplifier Schematic
-
-![amp schematic](img/amp_schematic.png)
-
-Since we need to output a higher voltage with no load on the cells 
-we have two choices:
-
-1. unblance the bridge so that load brings it back into balance
-2. invert the gain
-
-Unblancing the bridge is the intended approach for a single load cell configuration
-and involves tweaking one side of the bridge by a very small
-resistance via `R_BAL1`.
-
-Inverting the gain is intended for the dual load cell configuation.  Fortunately, the INA122 is
-rail to rail, so you can have `Vout` go all the way to `V+` by tying `ref` to `V+`
-and ensuring the higher potential side of the bridge is connected to `V-in` on the amp
-
-For our purposes, we actually want zero load to be a little less than `V+`, so we 
-use another trimpot to bring `ref` down to reduce the upper deadzone. Unfortunately,
-this causes the common mode rejection to degrade as we have a high 
-impedence on `ref`.  As per the datasheet, we should really put a unity gain op-amp
-in place to act as a buffer, but since we do not require high precision, we can 
-simply reduce `ref` lower as required and not worry too much about it's precise value
+Astute observers may have noticed the connections for the loadcell appear to be
+reversed in refence to V+ and V-.  This is because the labelling on the PCB of 
+V+ and V- was in reference to the dual load cell configuration and hence the 
+labels on the PCB are not correct for a single cell.
 
 ## Clutch
 
@@ -112,21 +95,12 @@ If you do not need this feature, you can leave `R3` and `R4` unpopulated on the 
 ![amp pcb top](img/amp_pcb_top.png)
 ![amp pcb bottom](img/amp_pcb_bottom.png)
 
-# STL models
+# STL model
 
-## Single Load Cell
+Previous prints have been done with the model on it's side.  This was to ensure the grain
+in the upper cyclinder was along the length of the cylinder
 
-The single load cell holder should fit in the standard pedal case
 [stl/single_holder.stl](stl/single_holder.stl) 
-
-## Dual Load Cell
-
-There are two separate bodies for the dual confifguration.  [stl/dual_holder.stl](stl/dual_holder.stl) contains
-the model for the load cell holder that mounts into the pedal frame and [stl/dual_spacer.stl](stl/dual_spacer.stl)
-contains the model for the small spacer that sits between the two cells.
-
-NOTE: this model will not fit inside the stadard pedal case.  It is also tricky to get the case assembled
-without the cells falling out!
 
 # G29 brake levels
 
