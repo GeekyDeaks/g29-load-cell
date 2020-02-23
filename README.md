@@ -74,7 +74,7 @@ be used for `R1` to allow `R_BAL1` to adjust the link with `R2` and force the br
 blance with no load
 
 `R_REF` should be replaced with a link from the middle pin to the right pin.  This
-will tie the `REF` pin on the INA122P to ground.  
+will tie the `REF` pin on the INA122P to ground.
 It was originally used when the design had two load cells
 and the INA122P was inverting the gain.
 
