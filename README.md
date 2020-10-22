@@ -27,6 +27,13 @@ Fully installed, with the amplifier circuit mounted in a small case
 
 ![load cell holder](img/holder_v3.jpg)
 
+2020-10-22 UPDATE
+
+Working on a 3D printed plunger to remove the need to cobble one together
+
+![plunger_assembled](img/plunger_assembled.jpg)
+![plunger_disassembled](img/plunger_disassembled.jpg)
+
 # Shopping list
 
 1. 3D printer capable of 80mm x 43mm x 43mm
@@ -109,7 +116,18 @@ the copper via toner transfer.  You can find a pdf with the correct size [here](
 Previous prints have been done with the model on it's side.  This was to ensure the grain
 in the upper cylinder was along the length of the cylinder
 
-[stl/single_holder.stl](stl/single_holder.stl) 
+- 30% infill
+- 5% support
+
+[stl/single_holder.stl](stl/single_holder.stl)
+
+The plunger is comprised of several sections.  It is recommened to print the bottom section with 100% infill
+
+- [stl/plunger_bottom.stl](stl/plunger_bottom.stl)
+- [stl/plunger_spacer_5mm.stl](stl/plunger_spacer_5mm.stl)
+- [stl/plunger_spacer_10mm.stl](stl/plunger_spacer_10mm.stl)
+- [stl/plunger_spacer_15mm.stl](stl/plunger_spacer_15mm.stl)
+- [stl/plunger_top.stl](stl/plunger_top.stl)
 
 # G29 brake levels
 
